@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>edit app</title>
+</head>
+<body>
+  <div>
+    <h3>Django todo app</h3>
+    <form action="{% url 'edit' gettask.id %}" method="POST">
+      {% csrf_token %}
+      <input type="text" name="task" value="{{ task.task }}">
+      <button type="submit"> update</button>
+    </form>
+  </div>
+</body>
+</html>
